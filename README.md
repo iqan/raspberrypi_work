@@ -8,6 +8,7 @@ Some codes to be run on raspberry pi.
 ### 5_led_blink.py
 * code for blinking 5 LED connected to the raspberry pi accessing GPIOs.
 * used GPIO 5, 6, 13, 19 and 26
+* CAUTION: In this, I have used negative logic.
 
 ### GPIO_clear.py
 * Reset all GPIOs used in codes
