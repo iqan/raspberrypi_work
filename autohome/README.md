@@ -7,5 +7,8 @@
 ### websv1.py
 Main python script for the control of 5 LEDs as per the requests sent by a web client.
 
+### test1.py
+Testing for 2 LEDs
+
 ### Templates
 Contains HTML files.
