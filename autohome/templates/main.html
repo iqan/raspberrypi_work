@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <head>
-   <title>Current Status</title>
+   <title>Project AutoHome by Iqan</title>
 </head>
 
 <body>
-   <h1>Device Listing and Status</h1>
+	<h1>Project: AutoHome (Testing)
+	<h1>LED Listing and Status</h1>
 
    {% for pin in pins %}
    <p>The {{ pins[pin].name }}
    {% if pins[pin].state == true %}
-      is currently on (<a href="/{{pin}}/off">turn off</a>)
+	  is currently on. <a href="/{{pin}}/off">Click Here</a> to turn off.
    {% else %}
-      is currently off (<a href="/{{pin}}/on">turn on</a>)
+	  is currently off. <a href="/{{pin}}/on">Click Here</a> to turn on.
    {% endif %}
    </p>
    {% endfor %}
@@ -20,5 +21,7 @@
    <h2>{{ message }}</h2>
    {% endif %}
 
+   <br><h1>Dev</h1><br>
+   <br><h2>Iqan Shaikh</h2><br>
 </body>
 </html>
