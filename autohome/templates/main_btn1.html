@@ -1,27 +1,60 @@
 <!DOCTYPE html>
 <head>
    <title>Project AutoHome by Iqan</title>
+   <style>
+	html{
+		background: #222;
+	    }
+	a{
+		color: #DBDBDB;
+		position: absolute;
+		text-decoration: none;
+        	display: block;
+		border: 2px solid #17A01E;
+		border-radius: 0.5vw;
+		border-color: white;
+		padding: 0.5vw 1vw;
+	}
+	
+	h1{
+		color: red;
+	}
+
+	h2{
+		color: blue;
+	}
+
+	p{
+		color: green;
+	}
+	
+	font{
+		color: #00FF99 ;
+	}
+   </style>
 </head>
 
 <body>
-	<h1>Project: AutoHome (Testing)
-	<h1>LED Listing and Status</h1>
+	<h1>Project: AutoHome (Testing)</h1>
+	<h2>LED Listing and Status</h2>
 
    {% for pin in pins %}
    <p>The {{ pins[pin].name }}
    {% if pins[pin].state == true %}
-	  is currently on. <input name="led" formaction="/{{pin}}/off" type="submit" value="Switch (on/off)">.
+	  is currently on. <a href="/{{pin}}/off">Switch off</a>
    {% else %}
-	  is currently off. <input name="led" formaction="/{{pin}}/on" type="submit" value="Switch (on/off)">
+	  is currently off. <a href="/{{pin}}/on">Switch on</a>
    {% endif %}
-   </p>
+   </p><br>
    {% endfor %}
+   
 
    {% if message %}
    <h2>{{ message }}</h2>
    {% endif %}
 
-   <br><h1>Dev</h1><br>
-   <br><h2>Iqan Shaikh</h2><br>
+   <br><h2>Devs</h2>
+   <font>iqans</font><br>
+   <font>KP</font>
 </body>
 </html>
