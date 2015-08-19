@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+   <title>Project AutoHome by Iqan</title>
+
+<style>
+	html{
+		background: #222;
+	    }
+	
+	h1{
+		color: red;
+	}
+
+	h2{
+		color: blue;
+	}
+
+	p{
+		color: green;
+	}
+	
+	font{
+		color: #00FF99 ;
+	}
+
+	button{
+		color: #DBDBDB;
+        	display: block;
+		border: 2px solid #17A01E;
+		border-radius: 0.5vw;
+		border-color: white;
+		padding: 0.5vw 1vw;
+	}
+</style>
+</head>
+
+<body>
+	<h1>Project: AutoHome (Testing)
+	<h1>LED Listing and Status</h1>
+
+<table>	
+
+   {% for pin in pins %}
+<tr>   
+<td>
+<p>The {{ pins[pin].name }}
+</p></td>
+   
+	{% if pins[pin].state == true %}
+<td><p>	  is currently on.
+</p></td>
+
+<td>
+<button > <a href="/{{pin}}/off">{{ pins[pin].name }}</a></button>
+</td>
+
+<td><p>to turn off.
+<p></td>
+
+   {% else %}
+<td><p>	  is currently off.
+</p></td>
+
+<td>
+<button> <a href="/{{pin}}/on">{{ pins[pin].name }}</a></button> 
+</td>
+
+<td><p>to turn on.
+</p></td>   
+
+	{% endif %}
+
+</tr>
+   {% endfor %}
+</table>
+
+   {% if message %}
+   <h2>{{ message }}</h2>
+   {% endif %}
+
+
+   <br> <h2>Dev</h2>
+   <h3>Iqan Shaikh</h3>
+</body>
+</html>

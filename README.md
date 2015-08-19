@@ -14,7 +14,7 @@ Some codes to be run on raspberry pi.
 * CAUTION: In this, I have used negative logic.
 
 ### GPIO_clear.py
-* Reset all GPIOs used in codes (turning off all LEDs)
+* Reset all GPIOs used in codes
 
 #Dev
 **_Iqan Shaikh_**
