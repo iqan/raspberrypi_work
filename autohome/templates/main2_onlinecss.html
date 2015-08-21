@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+   <title>Project AutoHome by Iqan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/home/pi/Desktop/raspberrypi_work/autohome/templates/style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<style>
+	body{
+		background: #222;
+	   }
+	a{
+	      text-decoration:none;
+		color:white;
+		}
+	
+	h1{
+		color: #01dfd7;
+	}
+
+	h2{
+		color: #8A0886;
+	}
+	
+	h3{
+		color: #F4FA58;
+	}
+
+	p{
+		color: green;
+	}
+	
+	font{
+		color: #00FF99 ;
+	}
+	em{
+		text-decoration:underline;
+	}
+
+	button{
+		color: #DBDBDB;
+		background-color:black;
+		width: 50px;
+		border: 2px solid green;
+		border-radius: 0.5vw;
+		padding: 0.5vw 1vw;
+	}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="row">
+	<div class="col-md-12 col-xs-6">
+		<h1>Project: AutoHome (Testing)
+	<h1>LED Listing and Status</h1>
+
+   {% for pin in pins %}
+   <p>The {{ pins[pin].name }}
+   {% if pins[pin].state == true %}
+	  is currently <span style="color:orange;">ON</span>.&nbsp&nbsp Press <button > <a href="/{{pin}}/off">OFF</a></button> 
+   {% else %}
+	  is currently <span style="color:red;">OFF</span>.&nbsp Press <button> <a href="/{{pin}}/on">ON</a></button>
+   {% endif %}
+   </p>
+   {% endfor %}
+
+   {% if message %}
+   <h2>Log: {{ message }}</h2>
+   {% endif %}
+
+	
+			
+   				<br><h3><b><em>Dev</em></b></h3>
+   				<h3>Iqan Shaikh</h3>
+   				<h3>Karan Parikh</h3>
+			
+	</div>
+</div>
+	
+
+</div>
+</body>
+</html>
